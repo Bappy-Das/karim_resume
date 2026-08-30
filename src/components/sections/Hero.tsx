@@ -2,10 +2,16 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { ArrowRight, Copy, Check, ExternalLink, Mail, MapPin, Phone, Code2 } from "lucide-react";
+import { ArrowRight, Copy, Check, ExternalLink, Mail, MapPin, Phone } from "lucide-react";
 import { portfolioData } from "@/data/portfolioData";
 import { ResumeModal } from "@/components/ui/ResumeModal";
-import { LinkedinBrandIcon, GithubBrandIcon, YoutubeBrandIcon, WhatsappBrandIcon } from "@/components/icons/TechIcons";
+import {
+  LinkedinBrandIcon,
+  GithubBrandIcon,
+  GoogleScholarBrandIcon,
+  KaggleBrandIcon,
+  WhatsappBrandIcon,
+} from "@/components/icons/TechIcons";
 
 export function Hero() {
   const [copied, setCopied] = useState(false);
@@ -125,14 +131,15 @@ export function Hero() {
             </button>
 
             {/* Social Icons Strip */}
-            <div className="w-full flex items-center justify-between gap-2.5 mt-3">
+            <div className="w-full grid grid-cols-5 gap-2 mt-3">
               {/* LinkedIn */}
               <a
                 href={portfolioData.personal.socials.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="flex-1 h-10 rounded-lg bg-[#0077B5] hover:bg-[#00669c] text-white flex items-center justify-center shadow-md transition-transform hover:-translate-y-0.5"
+                title="LinkedIn Profile"
+                className="h-10 rounded-lg bg-[#0077B5] hover:bg-[#00669c] text-white flex items-center justify-center shadow-md transition-transform hover:-translate-y-0.5"
               >
                 <LinkedinBrandIcon className="w-4 h-4" />
               </a>
@@ -143,31 +150,34 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="flex-1 h-10 rounded-lg bg-[#24292e] hover:bg-[#1b1f23] text-white flex items-center justify-center shadow-md border border-white/10 transition-transform hover:-translate-y-0.5"
+                title="GitHub Profile"
+                className="h-10 rounded-lg bg-[#24292e] hover:bg-[#1b1f23] text-white flex items-center justify-center shadow-md border border-white/10 transition-transform hover:-translate-y-0.5"
               >
                 <GithubBrandIcon className="w-4 h-4" />
               </a>
 
-              {/* YouTube / Scholar */}
-              {/* <a
-                href={portfolioData.personal.socials.youtube}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube / Research"
-                className="flex-1 h-10 rounded-lg bg-[#FF0000] hover:bg-[#cc0000] text-white flex items-center justify-center shadow-md transition-transform hover:-translate-y-0.5"
-              >
-                <YoutubeBrandIcon className="w-4 h-4" />
-              </a> */}
-
-              {/* LeetCode / Coding */}
+              {/* Google Scholar */}
               <a
-                href={portfolioData.personal.socials.leetcode}
+                href={portfolioData.personal.socials.googleScholar}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Coding Profile"
-                className="flex-1 h-10 rounded-lg bg-[#FFA116] hover:bg-[#e59012] text-black flex items-center justify-center shadow-md transition-transform hover:-translate-y-0.5"
+                aria-label="Google Scholar"
+                title="Google Scholar Publications"
+                className="h-10 rounded-lg bg-[#4285F4] hover:bg-[#3367d6] text-white flex items-center justify-center shadow-md transition-transform hover:-translate-y-0.5"
               >
-                <Code2 className="w-4 h-4" />
+                <GoogleScholarBrandIcon className="w-4 h-4" />
+              </a>
+
+              {/* Kaggle */}
+              <a
+                href={portfolioData.personal.socials.kaggle}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Kaggle"
+                title="Kaggle Profile"
+                className="h-10 rounded-lg bg-[#20BEFF] hover:bg-[#0099e6] text-white flex items-center justify-center shadow-md transition-transform hover:-translate-y-0.5"
+              >
+                <KaggleBrandIcon className="w-4 h-4" />
               </a>
 
               {/* WhatsApp */}
@@ -176,7 +186,8 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
-                className="flex-1 h-10 rounded-lg bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center shadow-md transition-transform hover:-translate-y-0.5"
+                title="WhatsApp Direct Contact"
+                className="h-10 rounded-lg bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center shadow-md transition-transform hover:-translate-y-0.5"
               >
                 <WhatsappBrandIcon className="w-4 h-4" />
               </a>

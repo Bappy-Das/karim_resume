@@ -74,9 +74,13 @@ export interface ExperienceItem {
 }
 
 export interface CertificationItem {
-  name: string;
+  id: string;
+  number?: string;
+  title: string;
   issuer: string;
   date?: string;
+  description: string;
+  link?: string;
   badge?: string;
 }
 
@@ -94,11 +98,14 @@ export const portfolioData = {
     profileImage: "/images/fazlekarim.png",
     resumeUrl: "#resume",
     socials: {
-      linkedin: "https://www.linkedin.com/in/mpemu",
-      github: "https://github.com/mpemu",
+      linkedin: "https://www.linkedin.com/in/mpemu/",
+      github: "https://github.com/p3mu",
       youtube: "https://www.youtube.com/@mpemu",
       leetcode: "https://leetcode.com/mpemu",
       whatsapp: "https://wa.me/12132744246",
+      googleScholar: "https://scholar.google.com/citations?user=6vgKh_UAAAAJ&hl=en&authuser=3",
+      scholar: "https://scholar.google.com/citations?user=6vgKh_UAAAAJ&hl=en&authuser=3",
+      kaggle: "https://www.kaggle.com/mdpemu",
     },
   },
 
@@ -184,13 +191,15 @@ export const portfolioData = {
       degree: "Master of Business Administration (MBA), Business Analytics",
       institution: "International American University",
       period: "January 2024 – May 2025",
-      details: "Advanced coursework in Predictive Analytics, Big Data Strategy, Business Intelligence, Quantitative Methods, and Enterprise Decision Science.",
+      details:
+        "Advanced coursework in Predictive Analytics, Big Data Strategy, Business Intelligence, Quantitative Methods, and Enterprise Decision Science.",
     },
     {
       degree: "Bachelor of Science (BSc), Computer Science and Engineering",
       institution: "Daffodil International University",
       period: "September 2014 – January 2019",
-      details: "Rigorous foundation in Algorithms, Database Management Systems, Statistical Computing, Software Architecture, and Artificial Intelligence.",
+      details:
+        "Rigorous foundation in Algorithms, Database Management Systems, Statistical Computing, Software Architecture, and Artificial Intelligence.",
     },
   ] as EducationItem[],
 
@@ -259,7 +268,8 @@ export const portfolioData = {
       date: "May 27, 2023",
       year: "2023",
       authors: "Fazle Karim, et al.",
-      description: "Smart-agriculture research using UAVs and an AlexNet CNN to detect crop diseases in Bangladesh, with blockchain integrated to improve supply-chain management and crop-protection data.",
+      description:
+        "Smart-agriculture research using UAVs and an AlexNet CNN to detect crop diseases in Bangladesh, with blockchain integrated to improve supply-chain management and crop-protection data.",
       image: "/images/proj-careflow.jpg",
       tags: ["Blockchain", "Deep Learning", "AlexNet CNN", "UAV", "Agriculture AI"],
       link: "https://linkedin.com/in/mpemu",
@@ -277,7 +287,8 @@ export const portfolioData = {
       date: "Mar 21, 2023",
       year: "2023",
       authors: "Fazle Karim, et al.",
-      description: "Compared six ML algorithms and a deep-learning sequential neural network on NASA's PROMISE dataset for software bug prediction. SVM outperformed other models, and feature selection meaningfully improved accuracy.",
+      description:
+        "Compared six ML algorithms and a deep-learning sequential neural network on NASA's PROMISE dataset for software bug prediction. SVM outperformed other models, and feature selection meaningfully improved accuracy.",
       image: "/images/proj-ecommerce.jpg",
       tags: ["Machine Learning", "Software Bug Prediction", "NASA PROMISE", "SVM", "Deep Learning"],
       link: "https://linkedin.com/in/mpemu",
@@ -289,13 +300,15 @@ export const portfolioData = {
     {
       id: "heart-failure-readmissions-forecasting",
       number: "03",
-      title: "Data-Driven Forecasting of Heart Failure Readmissions: Balancing Accuracy and Interpretability With Machine Learning",
+      title:
+        "Data-Driven Forecasting of Heart Failure Readmissions: Balancing Accuracy and Interpretability With Machine Learning",
       category: "Healthcare Analytics • Explainable AI",
       journalOrConference: "IEEE Xplore",
       date: "Jul 6, 2025",
       year: "2025",
       authors: "Fazle Karim, et al.",
-      description: "Explores interpretable machine learning models for predicting heart failure readmissions while maintaining high predictive accuracy. Evaluates multiple algorithms and explainability techniques to support reliable, data-driven clinical decision making.",
+      description:
+        "Explores interpretable machine learning models for predicting heart failure readmissions while maintaining high predictive accuracy. Evaluates multiple algorithms and explainability techniques to support reliable, data-driven clinical decision making.",
       image: "/images/proj-school.jpg",
       tags: ["Healthcare AI", "Heart Failure", "Explainable AI", "Predictive Analytics", "Clinical Decision"],
       link: "https://linkedin.com/in/mpemu",
@@ -311,8 +324,10 @@ export const portfolioData = {
       id: "bi-executive-dashboard",
       title: "Executive Business Intelligence & KPI Analytics Suite",
       subtitle: "Power BI, SQL & Tableau Enterprise Dashboards",
-      description: "Interactive executive BI reporting dashboard visualizing sales funnels, regional customer acquisition, KPI trends, and revenue attribution metrics.",
-      longDescription: "Engineered scalable business intelligence reporting solutions utilizing Power BI, SQL data warehouses, and Tableau. Features automated DAX measures, dynamic drill-down sales funnels, customer cohort retention modeling, and real-time KPI alerts for corporate executives.",
+      description:
+        "Interactive executive BI reporting dashboard visualizing sales funnels, regional customer acquisition, KPI trends, and revenue attribution metrics.",
+      longDescription:
+        "Engineered scalable business intelligence reporting solutions utilizing Power BI, SQL data warehouses, and Tableau. Features automated DAX measures, dynamic drill-down sales funnels, customer cohort retention modeling, and real-time KPI alerts for corporate executives.",
       image: "/images/proj-school.jpg",
       tags: ["Power BI", "SQL", "Tableau", "DAX", "Excel"],
       features: [
@@ -333,8 +348,10 @@ export const portfolioData = {
       id: "medicare-fraud-project",
       title: "Real-Time Medicare Fraud Detection AI",
       subtitle: "Multi-Modal Healthcare Claims & EHR Anomaly Detection",
-      description: "Machine learning engine analyzing insurance claims, patient EHR records, and provider billing patterns to flag Medicare fraud in real-time.",
-      longDescription: "Built an integrated healthcare analytics engine combining claim histories, clinical records, and billing velocity metrics to identify fraudulent billing patterns with high precision and low false-positive rates.",
+      description:
+        "Machine learning engine analyzing insurance claims, patient EHR records, and provider billing patterns to flag Medicare fraud in real-time.",
+      longDescription:
+        "Built an integrated healthcare analytics engine combining claim histories, clinical records, and billing velocity metrics to identify fraudulent billing patterns with high precision and low false-positive rates.",
       image: "/images/proj-careflow.jpg",
       tags: ["Python", "SQL", "Machine Learning", "EHR Analytics", "Tableau"],
       features: [
@@ -355,8 +372,10 @@ export const portfolioData = {
       id: "amazon-sentiment-project",
       title: "Aspect-Based E-Commerce Sentiment Intelligence",
       subtitle: "NLP & Machine Learning Review Intelligence Platform",
-      description: "Natural Language Processing system uncovering fine-grained aspect sentiments and customer product feedback from large-scale e-commerce reviews.",
-      longDescription: "Developed an end-to-end NLP analytics pipeline utilizing hybrid feature engineering (TF-IDF, word embeddings, linguistic rules) and machine learning classifiers to extract sentiment scores across specific product attributes (quality, price, usability, customer service).",
+      description:
+        "Natural Language Processing system uncovering fine-grained aspect sentiments and customer product feedback from large-scale e-commerce reviews.",
+      longDescription:
+        "Developed an end-to-end NLP analytics pipeline utilizing hybrid feature engineering (TF-IDF, word embeddings, linguistic rules) and machine learning classifiers to extract sentiment scores across specific product attributes (quality, price, usability, customer service).",
       image: "/images/proj-ecommerce.jpg",
       tags: ["Python", "NLP", "Pandas", "Scikit-Learn", "Tableau"],
       features: [
@@ -381,7 +400,8 @@ export const portfolioData = {
       title: "Analyzing Neuroimaging Epiphenomena: Machine Learning Approaches in Alzheimer's Prognostication",
       tag: "Research • Healthcare AI",
       duration: "Peer-Reviewed",
-      description: "Research paper on 3D fMRI/PET neuroimaging epiphenomena analysis and machine learning predictive modeling for Alzheimer's disease progression.",
+      description:
+        "Research paper on 3D fMRI/PET neuroimaging epiphenomena analysis and machine learning predictive modeling for Alzheimer's disease progression.",
       thumbnail: "/images/thumb-docker.jpg",
       youtubeUrl: "https://linkedin.com/in/mpemu",
       youtubeId: "research-1",
@@ -392,7 +412,8 @@ export const portfolioData = {
       title: "Real-Time, Multi-Modal Artificial Intelligence For Medicare Fraud Detection",
       tag: "Research • Fraud Detection",
       duration: "Peer-Reviewed",
-      description: "Integrated framework combining insurance claims, EHR data, and provider behavioral signals for real-time anomaly detection.",
+      description:
+        "Integrated framework combining insurance claims, EHR data, and provider behavioral signals for real-time anomaly detection.",
       thumbnail: "/images/thumb-nestjs.jpg",
       youtubeUrl: "https://linkedin.com/in/mpemu",
       youtubeId: "research-2",
@@ -403,11 +424,35 @@ export const portfolioData = {
       title: "Aspect-Based Sentiment Analysis of Amazon Product Reviews using Machine Learning & Hybrid Features",
       tag: "Research • NLP",
       duration: "Peer-Reviewed",
-      description: "Hybrid feature engineering NLP system classifying fine-grained product aspect sentiments from large-scale e-commerce reviews.",
+      description:
+        "Hybrid feature engineering NLP system classifying fine-grained product aspect sentiments from large-scale e-commerce reviews.",
       thumbnail: "/images/thumb-redis.jpg",
       youtubeUrl: "https://linkedin.com/in/mpemu",
       youtubeId: "research-3",
       views: "Academic Research",
+    },
+  ],
+
+  certificates: [
+    {
+      id: "cert-1",
+      number: "01",
+      title: "AI in Healthcare",
+      issuer: "Coursera",
+      date: "Specialized Credential",
+      description:
+        "Comprehensive training in machine learning applications for healthcare data, clinical diagnosis models, healthcare epiphenomena analysis, and prognostic AI frameworks.",
+      link: "https://www.coursera.org/account/accomplishments/specialization/9RHRZ19EE0MT",
+    },
+    {
+      id: "cert-2",
+      number: "02",
+      title: "Microsoft Business Analyst",
+      issuer: "Coursera",
+      date: "Professional Credential",
+      description:
+        "Professional certification covering business requirement analysis, enterprise data visualization, interactive Power BI executive dashboards, and statistical decision-making.",
+      link: "https://www.coursera.org/account/accomplishments/specialization/NDQO0CNNHZK2",
     },
   ],
 
@@ -417,7 +462,8 @@ export const portfolioData = {
       name: "Engineering Lead",
       role: "Storage Parts Direct",
       avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
-      quote: "Fazle has an exceptional knack for turning complex raw SQL queries and inventory tables into crisp, actionable Power BI executive dashboards.",
+      quote:
+        "Fazle has an exceptional knack for turning complex raw SQL queries and inventory tables into crisp, actionable Power BI executive dashboards.",
       platform: "LinkedIn",
       verified: true,
     },
@@ -426,7 +472,8 @@ export const portfolioData = {
       name: "Graduate Advisor",
       role: "International American University",
       avatar: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=150&auto=format&fit=crop&q=80",
-      quote: "Fazle's academic work in business analytics and healthcare AI predictive modeling demonstrated outstanding analytical rigor and methodological depth.",
+      quote:
+        "Fazle's academic work in business analytics and healthcare AI predictive modeling demonstrated outstanding analytical rigor and methodological depth.",
       platform: "LinkedIn",
       verified: true,
     },
@@ -435,7 +482,8 @@ export const portfolioData = {
       name: "Senior Data Scientist",
       role: "Health Informatics Lab",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
-      quote: "The Alzheimer's neuroimaging prognostic model developed by Fazle showcased brilliant feature selection and statistical validation.",
+      quote:
+        "The Alzheimer's neuroimaging prognostic model developed by Fazle showcased brilliant feature selection and statistical validation.",
       platform: "LinkedIn",
       verified: true,
     },

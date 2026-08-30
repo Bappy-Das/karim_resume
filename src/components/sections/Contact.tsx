@@ -3,7 +3,13 @@
 import React from "react";
 import { Mail, Phone, MapPin, ArrowUpRight, Code2 } from "lucide-react";
 import { portfolioData } from "@/data/portfolioData";
-import { LinkedinBrandIcon, GithubBrandIcon, YoutubeBrandIcon, WhatsappBrandIcon } from "@/components/icons/TechIcons";
+import {
+  LinkedinBrandIcon,
+  GithubBrandIcon,
+  GoogleScholarBrandIcon,
+  KaggleBrandIcon,
+  WhatsappBrandIcon,
+} from "@/components/icons/TechIcons";
 
 export function Contact() {
   return (
@@ -79,13 +85,13 @@ export function Contact() {
         </div>
 
         {/* Social Links Bar */}
-        <div className="p-5 sm:p-6 rounded-2xl glass-card flex flex-col sm:flex-row items-center justify-between gap-4">
+        {/* <div className="p-5 sm:p-6 rounded-2xl glass-card flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-center sm:text-left">
             <div className="text-sm font-bold text-white tracking-tight">Connect with me</div>
             <div className="text-xs text-gray-400 font-mono">Available on professional networks & coding platforms</div>
           </div>
 
-          <div className="flex items-center gap-2.5">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-2.5">
             <a
               href={portfolioData.personal.socials.linkedin}
               target="_blank"
@@ -106,26 +112,27 @@ export function Contact() {
             >
               <GithubBrandIcon className="w-4 h-4" />
             </a>
-            {/* <a
-              href={portfolioData.personal.socials.youtube}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="YouTube"
-              className="w-10 h-10 rounded-xl bg-[#FF0000] text-white flex items-center justify-center hover:opacity-90 transition-transform hover:-translate-y-0.5 shadow-sm"
-              title="YouTube"
-            >
-              <YoutubeBrandIcon className="w-4 h-4" />
-            </a> */}
             <a
-              href={portfolioData.personal.socials.leetcode}
+              href={portfolioData.personal.socials.googleScholar}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LeetCode"
-              className="w-10 h-10 rounded-xl bg-[#FFA116] text-black flex items-center justify-center hover:opacity-90 transition-transform hover:-translate-y-0.5 shadow-sm"
-              title="LeetCode"
+              aria-label="Google Scholar"
+              className="w-10 h-10 rounded-xl bg-[#4285F4] text-white flex items-center justify-center hover:opacity-90 transition-transform hover:-translate-y-0.5 shadow-sm"
+              title="Google Scholar"
             >
-              <Code2 className="w-4 h-4" />
+              <GoogleScholarBrandIcon className="w-4 h-4" />
             </a>
+            <a
+              href={portfolioData.personal.socials.kaggle}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Kaggle"
+              className="w-10 h-10 rounded-xl bg-[#20BEFF] text-white flex items-center justify-center hover:opacity-90 transition-transform hover:-translate-y-0.5 shadow-sm"
+              title="Kaggle"
+            >
+              <KaggleBrandIcon className="w-4 h-4" />
+            </a>
+
             <a
               href={portfolioData.personal.socials.whatsapp}
               target="_blank"
@@ -137,7 +144,7 @@ export function Contact() {
               <WhatsappBrandIcon className="w-4 h-4" />
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

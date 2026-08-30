@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { X, Download, FileText, Briefcase, GraduationCap, Code, Award, BookOpen } from "lucide-react";
 import { portfolioData } from "@/data/portfolioData";
 
@@ -10,6 +11,12 @@ interface ResumeModalProps {
 }
 
 export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -24,7 +31,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
     };
   }, [isOpen, onClose]);
 
-  if (!isOpen) return null;
+  if (!isOpen || !mounted) return null;
 
   const handleDownload = () => {
     const element = document.createElement("a");
@@ -75,8 +82,8 @@ PUBLICATIONS:
     document.body.removeChild(element);
   };
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10 bg-black/85 backdrop-blur-md animate-fadeIn">
+  return createPortal(
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 md:p-10 bg-black/85 backdrop-blur-md animate-fadeIn">
       <div className="absolute inset-0" onClick={onClose} />
 
       <div className="relative z-10 w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[#0c1220] border border-white/15 rounded-2xl shadow-2xl flex flex-col">
@@ -225,6 +232,7 @@ PUBLICATIONS:
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

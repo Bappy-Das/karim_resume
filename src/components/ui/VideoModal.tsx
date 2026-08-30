@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import { X, Clock, Eye, Play, BookOpen, ExternalLink } from "lucide-react";
 import { Publication } from "@/data/portfolioData";
@@ -13,7 +14,12 @@ interface VideoModalProps {
 }
 
 export function VideoModal({ publication, tutorial, onClose }: VideoModalProps) {
+  const [mounted, setMounted] = useState(false);
   const item = publication || tutorial;
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -29,10 +35,10 @@ export function VideoModal({ publication, tutorial, onClose }: VideoModalProps) 
     };
   }, [item, onClose]);
 
-  if (!item) return null;
+  if (!item || !mounted) return null;
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10 bg-black/85 backdrop-blur-md animate-fadeIn">
+  return createPortal(
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 md:p-10 bg-black/85 backdrop-blur-md animate-fadeIn">
       <div className="absolute inset-0" onClick={onClose} />
 
       <div className="relative z-10 w-full max-w-3xl bg-[#0c1220] border border-white/15 rounded-2xl shadow-2xl overflow-hidden flex flex-col">
@@ -88,6 +94,7 @@ export function VideoModal({ publication, tutorial, onClose }: VideoModalProps) 
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

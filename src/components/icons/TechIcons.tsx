@@ -163,6 +163,26 @@ export function WhatsappBrandIcon({ className = "w-5 h-5" }: IconProps) {
   );
 }
 
+export function GoogleScholarBrandIcon({ className = "w-5 h-5" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z" />
+    </svg>
+  );
+}
+
+export function ScholarBrandIcon(props: IconProps) {
+  return <GoogleScholarBrandIcon {...props} />;
+}
+
+export function KaggleBrandIcon({ className = "w-5 h-5" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18.825 23.859c-.022.08-.095.141-.184.141h-3.139a.24.24 0 0 1-.19-.092L8.71 14.73l-1.927 1.838v7.051a.24.24 0 0 1-.24.24H3.84a.24.24 0 0 1-.24-.24V.24A.24.24 0 0 1 3.84 0h2.703a.24.24 0 0 1 .24.24v13.75l7.98-7.905a.24.24 0 0 1 .17-.085h3.35c.105 0 .185.074.195.166.01.092-.05.185-.13.266l-7.79 7.64 8.287 9.55c.07.08.08.197.02.297z" />
+    </svg>
+  );
+}
+
 export function TechIcon({ name, className = "w-5 h-5" }: { name: string; className?: string }) {
   const key = name.toLowerCase().replace(/[^a-z0-9]/g, "");
 

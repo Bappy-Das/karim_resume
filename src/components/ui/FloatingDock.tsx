@@ -1,9 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { Share2, MessageSquare, ArrowUp } from "lucide-react";
+import { Share2, ArrowUp } from "lucide-react";
 import { portfolioData } from "@/data/portfolioData";
-import { GithubBrandIcon, LinkedinBrandIcon, YoutubeBrandIcon } from "@/components/icons/TechIcons";
+import {
+  GithubBrandIcon,
+  LinkedinBrandIcon,
+  GoogleScholarBrandIcon,
+  KaggleBrandIcon,
+} from "@/components/icons/TechIcons";
 
 export function FloatingDock() {
   const [copied, setCopied] = useState(false);
@@ -11,7 +16,7 @@ export function FloatingDock() {
   const handleShare = () => {
     if (navigator.share) {
       navigator.share({
-        title: "Naim Sorker — Full-Stack Developer",
+        title: `${portfolioData.personal.name} — ${portfolioData.personal.role}`,
         url: window.location.href,
       }).catch(() => {});
     } else {
@@ -61,13 +66,23 @@ export function FloatingDock() {
       </a>
 
       <a
-        href={portfolioData.personal.socials.youtube}
+        href={portfolioData.personal.socials.googleScholar}
         target="_blank"
         rel="noopener noreferrer"
-        title="YouTube Channel"
-        className="p-2.5 rounded-full text-gray-400 hover:text-red-400 hover:bg-white/10 transition-colors"
+        title="Google Scholar"
+        className="p-2.5 rounded-full text-gray-400 hover:text-[#4285F4] hover:bg-white/10 transition-colors"
       >
-        <YoutubeBrandIcon className="w-4 h-4" />
+        <GoogleScholarBrandIcon className="w-4 h-4" />
+      </a>
+
+      <a
+        href={portfolioData.personal.socials.kaggle}
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Kaggle"
+        className="p-2.5 rounded-full text-gray-400 hover:text-[#20BEFF] hover:bg-white/10 transition-colors"
+      >
+        <KaggleBrandIcon className="w-4 h-4" />
       </a>
 
       <div className="w-4 h-[1px] bg-white/15 my-1" />

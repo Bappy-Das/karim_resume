@@ -9,6 +9,7 @@ import { Skills } from "@/components/sections/Skills";
 import { Projects } from "@/components/sections/Projects";
 import { LearnFromMe } from "@/components/sections/LearnFromMe";
 import { Education } from "@/components/sections/Education";
+import { Certificates } from "@/components/sections/Certificates";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/layout/Footer";
@@ -33,6 +34,7 @@ export default function Home() {
         {/* <Projects /> */}
         <LearnFromMe />
         <Education />
+        <Certificates />
         {/* <Testimonials /> */}
         <Contact />
         <Footer />

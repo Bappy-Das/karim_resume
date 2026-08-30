@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Home, Briefcase, Cpu, BookOpen, GraduationCap, Mail, Moon, Sun, Menu, X } from "lucide-react";
+import { Home, Briefcase, Cpu, BookOpen, GraduationCap, Award, Mail, Moon, Sun, Menu, X } from "lucide-react";
 
 export function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
@@ -14,12 +14,13 @@ export function Navbar() {
     { name: "SKILLS", href: "#skills", icon: Cpu, color: "text-cyan-400" },
     { name: "RESEARCH", href: "#publications", icon: BookOpen, color: "text-amber-400" },
     { name: "EDUCATION", href: "#education", icon: GraduationCap, color: "text-emerald-400" },
+    { name: "AWARDS", href: "#certificates", icon: Award, color: "text-cyan-400" },
     { name: "CONTACT", href: "#contact", icon: Mail, color: "text-red-400" },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "experience", "skills", "publications", "education", "contact"];
+      const sections = ["home", "experience", "skills", "publications", "education", "certificates", "contact"];
       const scrollPos = window.scrollY + 200;
 
       for (const section of sections) {
@@ -53,7 +54,7 @@ export function Navbar() {
   };
 
   return (
-    <header className="sticky top-3.5 sm:top-5 z-50 max-w-[1200px] mx-auto px-4 sm:px-6">
+    <header className="sticky top-3.5 sm:top-5 z-40 max-w-[1200px] mx-auto px-4 sm:px-6">
       <nav className="relative flex items-center justify-between px-5 sm:px-6 py-2.5 sm:py-3 rounded-2xl bg-[#0b111e]/90 backdrop-blur-md border border-white/10 shadow-2xl shadow-black/80">
         {/* Brand Logo */}
         <button
