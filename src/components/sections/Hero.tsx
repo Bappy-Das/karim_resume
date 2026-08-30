@@ -31,12 +31,12 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="relative pt-8 sm:pt-12 md:pt-16 pb-12 overflow-hidden">
+    <section id="home" className="relative min-h-[calc(100vh-5rem)] flex items-center py-8 sm:py-12 overflow-hidden">
       {/* Background glowing ambient spotlight */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-blue-600/15 blur-[120px] rounded-full pointer-events-none -z-10" />
 
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-10 lg:gap-14">
+      <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col-reverse md:flex-row items-center md:items-center justify-between gap-10 lg:gap-14">
           {/* Left Column: Bio & Intro */}
           <div className="flex-1 text-center md:text-left space-y-5">
             {/* Status Badge */}
