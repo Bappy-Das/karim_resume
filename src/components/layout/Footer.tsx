@@ -12,6 +12,8 @@ import {
 } from "@/components/icons/TechIcons";
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="py-8 border-t border-white/5 bg-[#050810] text-gray-400 text-xs">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,7 +21,7 @@ export function Footer() {
           {/* Left copyright */}
           <div className="space-y-1">
             <div className="font-mono text-gray-300">
-              © 2024-2026 <span className="text-white font-semibold">{portfolioData.personal.name}</span>. All Rights Reserved.
+              © 2024-{currentYear} <span className="text-white font-semibold">{portfolioData.personal.name}</span>. All Rights Reserved.
             </div>
             <div className="text-[11px] text-gray-500 font-mono flex items-center justify-center sm:justify-start gap-1">
               <span>
