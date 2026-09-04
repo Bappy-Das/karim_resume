@@ -29,13 +29,17 @@ export function ChatWidget() {
       const lower = userText.toLowerCase();
 
       if (lower.includes("hire") || lower.includes("job") || lower.includes("role") || lower.includes("opportunity")) {
-        reply = "Fazle Karim is currently AVAILABLE for Business Intelligence Analyst, Data Analyst, and Analytics roles in the US (OPT/CPT). Please check out the Contact section to get in touch!";
+        reply =
+          "Fazle Karim is currently AVAILABLE for Business Intelligence Analyst, Data Analyst, and Analytics roles in the US (OPT/CPT). Please check out the Contact section to get in touch!";
       } else if (lower.includes("bi") || lower.includes("power bi") || lower.includes("tableau") || lower.includes("sql")) {
-        reply = "Fazle specializes in Power BI, SQL, Tableau, Python, and advanced Excel for executive KPI dashboards and data architecture.";
+        reply =
+          "Fazle specializes in Power BI, SQL, Tableau, Python, and advanced Excel for executive KPI dashboards and data architecture.";
       } else if (lower.includes("research") || lower.includes("publication") || lower.includes("paper") || lower.includes("ai")) {
-        reply = "Fazle has authored 3 peer-reviewed research publications covering Alzheimer's neuroimaging ML, Medicare fraud detection AI, and Aspect-based sentiment analysis NLP.";
+        reply =
+          "Fazle has authored 3 peer-reviewed research publications covering Alzheimer's neuroimaging ML, Medicare fraud detection AI, and Aspect-based sentiment analysis NLP.";
       } else if (lower.includes("education") || lower.includes("degree") || lower.includes("mba")) {
-        reply = "Fazle holds an MBA in Business Analytics from International American University and a BSc in Computer Science & Engineering from Daffodil International University.";
+        reply =
+          "Fazle holds an MBA in Business Analytics from International American University and a BSc in Computer Science & Engineering from Daffodil International University.";
       }
 
       setMessages((prev) => [...prev, { sender: "bot", text: reply }]);
@@ -74,10 +78,7 @@ export function ChatWidget() {
           {/* Messages */}
           <div className="p-4 max-h-[300px] overflow-y-auto space-y-3 bg-[#0a0f1c]/90 text-xs">
             {messages.map((m, i) => (
-              <div
-                key={i}
-                className={`flex ${m.sender === "user" ? "justify-end" : "justify-start"}`}
-              >
+              <div key={i} className={`flex ${m.sender === "user" ? "justify-end" : "justify-start"}`}>
                 <div
                   className={`max-w-[82%] p-3 rounded-2xl leading-relaxed ${
                     m.sender === "user"

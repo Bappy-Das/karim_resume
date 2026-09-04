@@ -11,21 +11,19 @@ export function LearnFromMe() {
         {/* Section Heading */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 sm:mb-8">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-bold font-tech tracking-tight text-white mb-1">
-              Research & Publications
-            </h2>
-            <div className="w-12 h-1 bg-amber-500 rounded-full mb-3" />
+            <h2 className="text-2xl sm:text-3xl font-bold font-tech tracking-tight text-white mb-1">Research & Publications</h2>
+            <div className="w-12 h-1 bg-blue-500 rounded-full mb-3" />
             <p className="text-sm sm:text-base text-gray-400 font-normal">
               Papers I’ve contributed to during university and my professional career.
             </p>
           </div>
           <a
-            href={portfolioData.personal.socials.linkedin}
+            href={portfolioData.personal.socials.googleScholar}
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs sm:text-sm font-mono text-gray-400 hover:text-amber-400 flex items-center gap-1.5 transition-colors group shrink-0"
           >
-            <span>View Academic Profiles</span>
+            <span>View Scholar Profiles</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
@@ -42,9 +40,7 @@ export function LearnFromMe() {
                 <div className="flex items-start gap-4 sm:gap-6">
                   {/* Index Number */}
                   <div className="shrink-0 pt-0.5">
-                    <span className="text-xs sm:text-sm font-mono font-bold text-amber-500">
-                      {pub.number || `0${idx + 1}`}
-                    </span>
+                    <span className="text-xs sm:text-sm font-mono font-bold text-blue-500">{pub.number || `0${idx + 1}`}</span>
                   </div>
 
                   {/* Publication Content */}
@@ -63,9 +59,7 @@ export function LearnFromMe() {
                           </h3>
                         </a>
                       ) : (
-                        <h3 className="text-base sm:text-lg font-bold leading-snug tracking-tight text-white">
-                          {pub.title}
-                        </h3>
+                        <h3 className="text-base sm:text-lg font-bold leading-snug tracking-tight text-white">{pub.title}</h3>
                       )}
                     </div>
 
@@ -77,9 +71,7 @@ export function LearnFromMe() {
                     </div>
 
                     {/* Description Paragraph */}
-                    <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal">
-                      {pub.description}
-                    </p>
+                    <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal">{pub.description}</p>
                   </div>
                 </div>
               </div>
